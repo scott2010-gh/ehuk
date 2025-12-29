@@ -1,6 +1,10 @@
 # 에흑() <br> <img src="https://img.shields.io/badge/Esolang-686868?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Python-66B2FF?style=for-the-badge&logo=Python&logoColor=white">
 모든 명령어가 에흑으로 이루어진 난해한 프로그래밍 언어
 <br><br>
+
+## IDE 사용하기
+[릴리즈 페이지](https://github.com/scott2010-gh/ehuk/releases/tag/v.1.0.0-beta)로 이동하여 IDE 다운로드가 가능합니다.
+
 ## 명령어 목록
 명령어 | 기능
 |---|---|
