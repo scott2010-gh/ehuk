@@ -6,9 +6,12 @@ class 에흑:
         self.pc = 0
         self.pm=1
         self.im=1
+        self.idem=0
         self.code=[]
         self.jumpto = {}
-    
+
+    def loadt(self,text):
+        self.code=text.replace('\n','').split(" ")
     def load(self,path):
         a=open(path,mode='r',encoding='utf-8')
         self.code=a.read().replace('\n','').split(" ")
@@ -45,12 +48,24 @@ class 에흑:
     def sv(self):
         if self.im==1:
             try:
-                self.memory[self.p] = int(input())
+                if self.idem==0:
+                    self.memory[self.p] = int(input())
+                elif self.idem==1:
+                    from tkinter import simpledialog as s
+                    inp = s.askstring("입력","값을 입력하세요")
+                    self.memory[self.p] = int(inp)
+                    return 0
             except:
                 print("에#####흑") #입력 오류
         elif self.im==0:
             try:
-                self.memory[self.p] = ord(str(input()))
+                if self.idem==0:
+                    self.memory[self.p] = ord(str(input()))
+                elif self.idem==1:
+                    from tkinter import simpledialog as s
+                    inp = s.askstring("입력","값을 입력하세요")
+                    self.memory[self.p] = ord(str(inp))
+                    return 0
             except:
                 print("에######흑")
 
@@ -90,6 +105,7 @@ class 에흑:
         return self.code
 
     def run(self):
+
         self.preprocessing()
         while self.pc<len(self.code):
             cmd = self.code[self.pc]
